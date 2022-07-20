@@ -55,13 +55,22 @@ class PlacingBidWebPresenter(PlacingBidOutputBoundary):
         return self.result
 
 
+from .base import Auction
+
 class AuctionsDataAccess:
-    def get(self, auction_id):
-        ...
+    @abc.abstractmethod
+    def get(self, auction_id: int):
+        pass
+
+    def save(self, auction: Auction):
+        pass
 
 
 class PlacingBidUseCase(PlacingBidInputBoundary):
-    """Use case orchestrates the whole business process. """
+    """PlacingBid controller.
+    
+    Use case orchestrates the whole business process.
+    """
 
     def __init__(self, data_access: AuctionsDataAccess, output_boundary: PlacingBidOutputBoundary):
 
