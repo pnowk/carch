@@ -63,3 +63,15 @@ class Money(Currency):
 
     def __eq__(self, o: 'Money') -> bool:
         return self.amount == o.amount and self.symbol == o.symbol
+
+    def __gt__(self, o: 'Money') -> bool:
+        return self.amount  > o.amount and self.symbol == o.symbol
+
+    def __lt__(self, o: 'Money') -> bool:
+        return not self > o
+
+    def __gte__(self, o: 'Money') -> bool:
+        return self > o or self == o
+
+    def __lte__(self, o: 'Money') -> bool:
+        return not self >= o

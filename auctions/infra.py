@@ -3,21 +3,13 @@
 # pylint: disable=all
 
 
-from .app import AuctionsDataAccess, Auction
+from .app import AuctionsRepository, Auction
 
+class SqliteAuctionsRepository(AuctionsRepository):
 
-class ConcreteAuction(Auction):
-
-    # Placeholder for concrete auction impl.
-    pass
-
-class DbAuctionsDataAccess(AuctionsDataAccess):
-
-    # Placeholder for concrete data access impl.
-
-    def get(self, aution_id: int):
+    def get(self, auction_id: int):
         pass
 
 
-    def save(self, aution: ConcreteAuction):
+    def save(self, auction: Auction):
         pass

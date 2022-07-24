@@ -64,11 +64,11 @@ class Auction:
         if no bids were made."""
 
         if self._bids:
-            return self._hightest_bid.bidder_id
+            return self._highest_bid.bidder_id
         return None
             
     @property
-    def _hightest_bid(self) -> Optional[BidderId]:
+    def _highest_bid(self) -> Optional[BidderId]:
         
         # Hightest bid is the last on the list.
         return self._bids[-1]
