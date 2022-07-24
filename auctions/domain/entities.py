@@ -1,16 +1,19 @@
 # pylint: disable=all
 
 from dataclasses import dataclass
-from decimal import Decimal
-from typing import Optional, List
+from typing import Optional
+from .types import BidderId, Money, BidId, AuctionId
 
-
+# Entities should be implemented in "pure" python. 
+# Eg. should not be coupled with any other class like sqlalchemy ORM.
 
 @dataclass
 class Bid:
-    id: Optional[int]
-    bidder_id: int
-    amount: Decimal
+    """Entity representing an offer made."""
+    
+    id: Optional[BidId]
+    bidder_id: BidderId
+    amount: Money
 
 
 class Auction:
@@ -24,18 +27,16 @@ class Auction:
     # risk to the state and integrity of the instance.
     # Commands are more risky. The order could be relevant.
     # Eg. There is not point in withdrawing and offer without placing it first.
-    def __init__(self, id: int, starting_price: Decimal, bids: List[Bid]):
-        self.id = id
-        self.starting_price = starting_price
-        self.bids = bids
+    def __init__(self, starting_price: Money):
+        self._starting_price = starting_price
 
-    def place_bid(self, user_id: int, amount: Decimal):
+    def place_bid(self, bider_id: BidderId, amount: Money):
         pass
 
     @property
-    def current_price(self) -> Decimal:
-        pass
+    def current_price(self) -> Money:
+        return self._starting_price
 
     @property
-    def winners(self) -> List[int]:
+    def winner(self) -> BidderId:
         pass

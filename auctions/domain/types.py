@@ -13,6 +13,7 @@ from decimal import Decimal, DecimalException
 # Eg. few places in the code need to be aware that these are in fact integers.
 AuctionId = int
 BidderId = int
+BidId = int
 
 
 class Currency:
