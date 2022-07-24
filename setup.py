@@ -14,7 +14,8 @@ setuptools.setup(
     extras_require={
         'dev': [
            'pytest',
-           'flake8'
+           'flake8',
+           'mock'
         ]
     },
     entry_points={
