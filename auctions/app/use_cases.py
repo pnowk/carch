@@ -55,7 +55,7 @@ class PlacingBidWebPresenter(PlacingBidOutputBoundary):
         return self.result
 
 
-from .base import Auction
+from ..domain import Auction
 
 class AuctionsDataAccess:
     @abc.abstractmethod

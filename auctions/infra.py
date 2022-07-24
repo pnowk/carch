@@ -1,3 +1,5 @@
+"""Auctions infrastructure."""
+
 # pylint: disable=all
 
 

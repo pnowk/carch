@@ -1,4 +1,3 @@
-
 # pylint: disable=all
 
 from dataclasses import dataclass
@@ -40,7 +39,3 @@ class Auction:
     @property
     def winners(self) -> List[int]:
         pass
-
-
-
-
