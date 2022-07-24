@@ -9,5 +9,5 @@
 #     usecase = PlacingBid
 
 
-def test_1:
+def test_1():
     assert True
