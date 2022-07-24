@@ -13,7 +13,8 @@ setuptools.setup(
     python_requires=">=3.8",
     extras_require={
         'dev': [
-           'pytest'
+           'pytest',
+           'flake8'
         ]
     },
     entry_points={
